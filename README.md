@@ -15,3 +15,13 @@ start.
 1 2 3 4
 10 20 30 5
 7 7 7 7
+
+
+Завдання 2
+
+
+runhaskell task2.hs
+
+
+swipl task2.pl
+start.
