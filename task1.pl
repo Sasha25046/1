@@ -1,4 +1,3 @@
-% --- Логіка задачі ---
 
 move_min_to_front([], []).
 move_min_to_front(List, Result) :-
@@ -14,7 +13,6 @@ split_min([H|T], Min, Mins, [H|Others]) :-
     H =\= Min,
     split_min(T, Min, Mins, Others).
 
-% --- Блок для зручного вводу ---
 
 start :-
     nl, write('--- Задача 1: Мінімум у початок ---'), nl,
