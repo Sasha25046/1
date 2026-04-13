@@ -12,7 +12,7 @@ accepts(S, [Char|Chars], Last) :-
     accepts(S1, Chars, Last).
 
 solve_automaton(W_String, ResultString) :-
-    string_chars(W_String, W),      % Рядок "abc" -> список ['a','b','c']
+    string_chars(W_String, W),
     start_state(S0),
     
     between(0, 5, LX), length(X, LX),
