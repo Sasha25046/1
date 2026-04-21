@@ -132,3 +132,40 @@ trans(2, z, 2).
 trans(0, y, 3).
 trans(0, z, 3).
 trans(3, x, 3). trans(3, y, 3). trans(3, z, 3).
+
+
+cd "4 задача"
+ghci Terminal.hs
+main
+
+swipl Terminal.pl
+
+1 приклад
+rule(a, [b]).
+rule(b, [c]).
+rule(c, [a]). 
+
+[ ("A", [NT "B"]), ("B", [NT "C"]), ("C", [NT "A"]) ]
+
+2 приклад
+rule(s, [a, b]). % b - термінал
+rule(a, [s]).
+
+[ ("S", [NT "A", T "b"]), ("A", [NT "S"]) ]
+
+3 приклад
+rule(x, [a, x]).
+rule(x, [y]).
+rule(y, [b]).
+
+
+[ ("X", [T "a", NT "X"]), ("X", [NT "Y"]), ("Y", [T "b"]) ]
+
+4 приклад
+
+rule(s, [a]).
+rule(s, [b]).
+rule(a, [s]).
+rule(b, [s]).
+
+[ ("S", [NT "A"]), ("S", [NT "B"]), ("A", [NT "S"]), ("B", [NT "S"]) ]

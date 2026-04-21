@@ -22,9 +22,9 @@ canReachFinal auto start = bfs [(start, "")] []
   where
     bfs [] _ = Nothing
     bfs ((curr, path):queue) visited
-        | curr `elem` finalStates auto = Just (reverse path)
-        | curr `elem` visited = bfs queue visited
-        | otherwise = 
+         curr `elem` finalStates auto = Just (reverse path)
+         curr `elem` visited = bfs queue visited
+         otherwise = 
             let nextMoves = [(next, sym:path) | ((s, sym), next) <- transitions auto, s == curr]
             in bfs (queue ++ nextMoves) (curr:visited)
 
@@ -33,9 +33,9 @@ findPathToState auto start target = bfs [(start, "")] []
   where
     bfs [] _ = Nothing
     bfs ((curr, path):queue) visited
-        | curr == target = Just (reverse path)
-        | curr `elem` visited = bfs queue visited
-        | otherwise = 
+          curr == target = Just (reverse path)
+          curr `elem` visited = bfs queue visited
+          otherwise = 
             let nextMoves = [(next, sym:path) | ((s, sym), next) <- transitions auto, s == curr]
             in bfs (queue ++ nextMoves) (curr:visited)
 
